@@ -1,1 +1,2 @@
 index.html
+<a href=“q1.html”> quiz 1 </a>
