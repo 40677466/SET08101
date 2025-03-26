@@ -1,13 +1,24 @@
+// Function to go to the home page without clearing progress
+function goHome() {
+    window.location.href = "index.html"; // Redirect to the home page
+}
+
+// Function to restart the quiz
+function restartQuiz() {
+    localStorage.clear(); // Clears all stored quiz data
+    window.location.href = "q1.html"; // Redirect to the first question
+}
+
 // Store correct answers for each question
 const correctAnswers = {
-	1: 'C', // Paris
-	2: 'C', // Pacific Ocean
-        3: 'A', // William Shakespeare
-        4: 'A', // Oxygen
-	5: 'C', // 8
-        6: 'C', // Tokyo
-	7: 'A', // Neil Armstrong
-        8: 'B'  // Mars
+    1: 'C', // Paris
+    2: 'C', // Pacific Ocean
+    3: 'A', // William Shakespeare
+    4: 'A', // Oxygen
+    5: 'C', // 8
+    6: 'C', // Tokyo
+    7: 'A', // Neil Armstrong
+    8: 'B'  // Mars
 };
 
 // Function to handle answer selection
@@ -62,13 +73,8 @@ function displayResults() {
     }
 }
 
-// Function to restart the quiz
-function restartQuiz() {
-    localStorage.clear(); // Clears all stored quiz data
-    window.location.href = "q1.html"; // Redirect to the first question
-}
-
 // Call displayResults when on results page
 if (window.location.pathname.includes("results.html")) {
     displayResults();
 }
+
