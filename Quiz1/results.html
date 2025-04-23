@@ -12,26 +12,12 @@
         <ul id="answers-list"></ul>
         <button onclick="restartQuiz()">Restart Quiz</button>
     </div>
-
-    <div class="quiz-complete">
-        <h1>Quiz Completed!</h1>
-        <p>Congratulations on finishing the quiz!</p>
-        <button id="completeQuizBtn">Mark Quiz Complete</button>
-    </div>
+    
+    <script src="script.js"></script> <!-- Ensure the correct script.js file here -->
 
     <footer>
-        <a href="../index.html">Homepage</a>
+       <a href="index.html"> Homepage </a>
+       
     </footer>
-
-	
-    <script src="../IndexScript.js"></script>
-    <script>
-        // Connor B Complete Button - Stores quiz completion in local storage
-        document.getElementById("completeQuizBtn").addEventListener("click", function() {
-            localStorage.setItem("quiz1Complete", "true");
-            alert("Quiz 1 marked as complete! Returning to homepage.");
-            window.location.href = "../index.html";
-        });
-    </script>
 </body>
 </html>
