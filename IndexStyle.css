@@ -1,0 +1,147 @@
+body {
+    background-color: #0a0f29;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #1a1e3b;
+    padding: 30px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0;
+    letter-spacing: 1px;
+    color: gold;
+    text-transform: uppercase;
+}
+
+.header p {
+    font-size: 20px;
+    color: #c2c2c2;
+    margin-top: 10px;
+}
+
+.quiz-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 50px auto;
+    flex-wrap: wrap;
+    max-width: 800px;
+	
+}
+
+.quiz {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1e3b;
+    border-radius: 15px;
+    position: relative;
+    padding: 20px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.quiz:hover {
+    transform: scale(1.05);
+    background-color: #242a4d;
+}
+
+.quiz.locked {
+    background-color: #121429;
+    pointer-events: none;
+    cursor: default;
+	opacity: 0.5
+	
+}
+
+.quiz.locked + .quiz-description {
+    background-color: #121429;  /* Darker background for locked state */
+    opacity: 0.5; 
+	pointer-events: none;
+    cursor: default;
+}
+
+.quiz-description {
+    width: 200px;
+    background-color: #242a4d;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    color: white;
+    font-size: 14px;
+}
+
+
+
+
+.shape {
+    width: 130px;
+    height: 130px;
+    background-color: white;
+    border-radius: 0%;
+	box-shadow: 0 10px 18px rgba(0, 0, 0, 30); 
+}
+
+
+.circle {
+	width: 140px;
+    height: 140px;
+    border-radius: 50% !important;
+}
+
+.diamond {
+    transform: rotate(45deg);
+	width: 120px;
+    height: 120px;
+}
+
+.complete .shape {
+    background-color: gold !important;
+    width: 120px;
+    height: 120px;
+	box-shadow: 0 0px 0px rgba(0, 0, 0, 30); /* Subtle shadow */
+}
+
+
+
+.quiz-title {
+    font-weight: bold;
+    color: white;
+    display: block;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.quiz.complete + .quiz-description .quiz-title {
+    color: gold !important;
+	
+}
+
+.reset-button {
+    margin: 30px auto;
+    display: block;
+    padding: 15px 25px;
+    background-color: #242a4d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.reset-button:hover {
+    background-color: #e60000;
+}

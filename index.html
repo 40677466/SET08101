@@ -1,5 +1,55 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-<a href=q1.html> quiz 1 </a>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Challenge</title>
+    <link rel="stylesheet" href="IndexStyle.css">
 </head>
+<body>
+    <div class="header">
+        <h1>QuizWhiz Challenge</h1>
+        <p>One of the world's best game-based learning websites!<br>
+            <span style="color: #415CF2;">Complete each quiz to unlock the next one.</span></p>
+    </div>
+    
+    <div class="quiz-container">
+        <!-- Quiz 1 -->
+        <div>
+            <a href="Quiz1/results.html" class="quiz" id="quiz1">
+                <div class="shape circle"></div>
+            </a>
+            <div class="quiz-description">
+                <span class="quiz-title">Quiz 1 (Easy)</span>
+                <p>Test your basic knowledge with this quiz!</p>
+            </div>
+        </div>
+        
+        <!-- Quiz 2 -->
+        <div>
+            <a href="Quiz2/quiz2.html" class="quiz locked" id="quiz2">
+                <div class="shape square"></div>
+            </a>
+            <div class="quiz-description">
+                <span class="quiz-title">Quiz 2 (Medium)</span>
+                <p>Challenge yourself with intermediate-level quiz!</p>
+            </div>
+        </div>
+        
+        <!-- Quiz 3 -->
+        <div>
+            <a href="Quiz3/quiz3.html" class="quiz locked" id="quiz3">
+                <div class="shape diamond"></div>
+            </a>
+            <div class="quiz-description">
+                <span class="quiz-title">Quiz 3 (Hard)</span>
+                <p>Only the best can complete this expert-level quiz!</p>
+            </div>
+        </div>
+    </div>
+    
+    <button id="resetBtn" class="reset-button">Reset Progress</button>
+    
+    <script src="IndexScript.js"></script>
+</body>
 </html>
