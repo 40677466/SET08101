@@ -1,6 +1,6 @@
 // Function to go to the home page without clearing progress
 function goHome() {
-    window.location.href = "../index.html"; // Go up one level to the home page
+   window.location.href = "/SET08101/index.html"; // Go up one level to the home page
 }
 
 // Function to restart the quiz
