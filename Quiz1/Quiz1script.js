@@ -1,6 +1,6 @@
 // Function to go to the home page without clearing progress
 function goHome() {
-    window.location.href = "index.html"; // Redirect to the home page
+    window.location.href = "../index.html"; // Go up one level to the home page
 }
 
 // Function to restart the quiz
@@ -77,4 +77,3 @@ function displayResults() {
 if (window.location.pathname.includes("Quiz1results.html")) {
     displayResults();
 }
-
