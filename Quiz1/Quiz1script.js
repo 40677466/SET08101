@@ -44,7 +44,7 @@ function selectAnswer(questionNumber, selectedOption) {
     if (nextQuestion <= Object.keys(correctAnswers).length) {
         window.location.href = `q${nextQuestion}.html`;
     } else {
-        window.location.href = "results.html"; // Redirect to results page after last question
+        window.location.href = "Quiz1results.html"; // Redirect to updated results page
     }
 }
 
@@ -74,7 +74,7 @@ function displayResults() {
 }
 
 // Call displayResults when on results page
-if (window.location.pathname.includes("results.html")) {
+if (window.location.pathname.includes("Quiz1results.html")) {
     displayResults();
 }
 
