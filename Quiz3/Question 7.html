@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Question 7</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <div class="progress-container">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
+	<h1>Question 7</h1>
+	<p>In basketball, how many points is a free throw worth?</p>
+	<form id="quizForm">
+	  <input type="radio" name="answer" value="1" id="one">
+	  <label for="one">1</label><br>
+
+	  <input type="radio" name="answer" value="2" id="two">
+	  <label for="two">2</label><br>
+
+	  <input type="radio" name="answer" value="3" id="three">
+	  <label for="three">3</label><br>
+
+	  <button type="button" onclick="submitAnswer()">Next</button>
+	</form>
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const answers = document.getElementsByName('answer');
+      let selected = '';
+      for (let answer of answers) {
+        if (answer.checked) {
+          selected = answer.value;
+          break;
+        }
+      }
+
+      if (selected) {
+        sessionStorage.setItem('q7', selected);
+        window.location.href = 'Question 8.html';
+      } else {
+        alert('Please select an answer!');
+      }
+    }
+	
+	window.onload = function() {
+    const progress = document.getElementById('progressBar');
+    progress.style.width = '70%';
+  }
+  </script>
+</body>
+</html>

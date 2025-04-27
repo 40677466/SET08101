@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Question 4</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <div class="progress-container">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
+	<h1>Question 4</h1>
+	<p>Which country hosts the Tour de France cycling race?</p>
+	<form id="quizForm">
+	  <input type="radio" name="answer" value="Italy" id="italy">
+	  <label for="italy">Italy</label><br>
+
+	  <input type="radio" name="answer" value="Spain" id="spain">
+	  <label for="spain">Spain</label><br>
+
+	  <input type="radio" name="answer" value="France" id="france">
+	  <label for="france">France</label><br>
+
+	  <button type="button" onclick="submitAnswer()">Next</button>
+	</form>
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const answers = document.getElementsByName('answer');
+      let selected = '';
+      for (let answer of answers) {
+        if (answer.checked) {
+          selected = answer.value;
+          break;
+        }
+      }
+
+      if (selected) {
+        sessionStorage.setItem('q4', selected);
+        window.location.href = 'Question 5.html';
+      } else {
+        alert('Please select an answer!');
+      }
+    }
+	
+	window.onload = function() {
+    const progress = document.getElementById('progressBar');
+    progress.style.width = '40%';
+  }
+  </script>
+</body>
+</html>

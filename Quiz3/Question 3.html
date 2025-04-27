@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Question 3</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <div class="progress-container">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
+	<h1>Question 3</h1>
+	<p>Who holds the record for the most Grand Slam titles in men's tennis (as of 2025)?</p>
+	<form id="quizForm">
+	  <input type="radio" name="answer" value="Novak Djokovic" id="djokovic">
+	  <label for="djokovic">Novak Djokovic</label><br>
+
+	  <input type="radio" name="answer" value="Roger Federer" id="federer">
+	  <label for="federer">Roger Federer</label><br>
+
+	  <input type="radio" name="answer" value="Rafael Nadal" id="nadal">
+	  <label for="nadal">Rafael Nadal</label><br>
+
+	  <button type="button" onclick="submitAnswer()">Next</button>
+	</form>
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const answers = document.getElementsByName('answer');
+      let selected = '';
+      for (let answer of answers) {
+        if (answer.checked) {
+          selected = answer.value;
+          break;
+        }
+      }
+
+      if (selected) {
+        sessionStorage.setItem('q3', selected);
+        window.location.href = 'Question 4.html';
+      } else {
+        alert('Please select an answer!');
+      }
+    }
+	
+	window.onload = function() {
+    const progress = document.getElementById('progressBar');
+    progress.style.width = '30%';
+  }
+  </script>
+</body>
+</html>

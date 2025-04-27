@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Question 10</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <div class="progress-container">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
+	<h1>Question 10</h1>
+	<p>In which sport would you perform a \"slam dunk\"?</p>
+	<form id="quizForm">
+	  <input type="radio" name="answer" value="Volleyball" id="volleyball">
+	  <label for="volleyball">Volleyball</label><br>
+
+	  <input type="radio" name="answer" value="Basketball" id="basketball">
+	  <label for="basketball">Basketball</label><br>
+
+	  <input type="radio" name="answer" value="Rugby" id="rugby">
+	  <label for="rugby">Rugby</label><br>
+
+	  <button type="button" onclick="submitAnswer()">Finish</button>
+	</form>
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const answers = document.getElementsByName('answer');
+      let selected = '';
+      for (let answer of answers) {
+        if (answer.checked) {
+          selected = answer.value;
+          break;
+        }
+      }
+
+      if (selected) {
+        sessionStorage.setItem('q10', selected);
+        window.location.href = 'Results.html';
+      } else {
+        alert('Please select an answer!');
+      }
+    }
+	
+	window.onload = function() {
+    const progress = document.getElementById('progressBar');
+    progress.style.width = '100%';
+  }
+  </script>
+</body>
+</html>

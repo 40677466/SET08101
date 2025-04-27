@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Question 6</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <div class="progress-container">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
+	<h1>Question 6</h1>
+	<p>Which NFL team has won the most Super Bowls?</p>
+	<form id="quizForm">
+	  <input type="radio" name="answer" value="New England Patriots" id="patriots">
+	  <label for="patriots">New England Patriots</label><br>
+
+	  <input type="radio" name="answer" value="Pittsburgh Steelers" id="steelers">
+	  <label for="steelers">Pittsburgh Steelers</label><br>
+
+	  <input type="radio" name="answer" value="Dallas Cowboys" id="cowboys">
+	  <label for="cowboys">Dallas Cowboys</label><br>
+
+	  <button type="button" onclick="submitAnswer()">Next</button>
+	</form>
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const answers = document.getElementsByName('answer');
+      let selected = '';
+      for (let answer of answers) {
+        if (answer.checked) {
+          selected = answer.value;
+          break;
+        }
+      }
+
+      if (selected) {
+        sessionStorage.setItem('q6', selected);
+        window.location.href = 'Question 7.html';
+      } else {
+        alert('Please select an answer!');
+      }
+    }
+	
+	window.onload = function() {
+    const progress = document.getElementById('progressBar');
+    progress.style.width = '60%';
+  }
+  </script>
+</body>
+</html>

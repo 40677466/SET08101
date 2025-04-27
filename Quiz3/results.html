@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Results</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Your Results</h1>
+    <div id="results"></div>
+    <button onclick="homePage()">Home Page</button>
+  </div>
+
+  <script>
+    function showResults() {
+	const answers = [];
+      for (let i = 1; i <= 10; i++) {
+        answers.push(sessionStorage.getItem('q' + i));
+      }
+
+      const correctAnswers = [
+        'Argentina',
+        '9',
+        'Novak Djokovic',
+        'France',
+        '147',
+        'New England Patriots',
+        '1',
+        'Muhammad Ali',
+        'USA',
+        'Basketball'
+      ];
+
+      let score = 0;
+      let output = '<ul>';
+
+      for (let i = 0; i < answers.length; i++) {
+        const userAnswer = answers[i] || 'No Answer';
+        const correct = correctAnswers[i];
+        if (userAnswer === correct) {
+          score++;
+          output += `<li>Question ${i + 1}: <strong>Correct!</strong> (${userAnswer})</li>`;
+        } else {
+          output += `<li>Question ${i + 1}: <strong>Incorrect</strong> (You chose: ${userAnswer}, Correct: ${correct})</li>`;
+        }
+      }
+
+      output += '</ul>';
+
+      document.getElementById('results').innerHTML = `
+        <p>You scored <strong>${score}</strong> out of <strong>10</strong>!</p>
+        ${output}
+      `;
+    }
+
+    function homePage() {
+      sessionStorage.clear();
+      window.location.href = 'Question 1.html';
+    }
+
+    window.onload = showResults;
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Question 9</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <div class="progress-container">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
+	<h1>Question 9</h1>
+	<p>Which country has won the most Olympic gold medals overall?</p>
+	<form id="quizForm">
+	  <input type="radio" name="answer" value="Russia" id="russia">
+	  <label for="russia">Russia</label><br>
+
+	  <input type="radio" name="answer" value="China" id="china">
+	  <label for="china">China</label><br>
+
+	  <input type="radio" name="answer" value="USA" id="usa">
+	  <label for="usa">USA</label><br>
+
+	  <button type="button" onclick="submitAnswer()">Next</button>
+	</form>
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const answers = document.getElementsByName('answer');
+      let selected = '';
+      for (let answer of answers) {
+        if (answer.checked) {
+          selected = answer.value;
+          break;
+        }
+      }
+
+      if (selected) {
+        sessionStorage.setItem('q9', selected);
+        window.location.href = 'Question 10.html';
+      } else {
+        alert('Please select an answer!');
+      }
+    }
+	
+	window.onload = function() {
+    const progress = document.getElementById('progressBar');
+    progress.style.width = '90%';
+  }
+  </script>
+</body>
+</html>

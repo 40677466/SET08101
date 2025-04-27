@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Question 8</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <div class="progress-container">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
+	<h1>Question 8</h1>
+	<p>Who is known as \"The Greatest\" boxer and heavyweight champion?</p>
+	<form id="quizForm">
+	  <input type="radio" name="answer" value="Mike Tyson" id="tyson">
+	  <label for="tyson">Mike Tyson</label><br>
+
+	  <input type="radio" name="answer" value="Muhammad Ali" id="ali">
+	  <label for="ali">Muhammad Ali</label><br>
+
+	  <input type="radio" name="answer" value="Floyd Mayweather" id="mayweather">
+	  <label for="mayweather">Floyd Mayweather</label><br>
+
+	  <button type="button" onclick="submitAnswer()">Next</button>
+	</form>
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const answers = document.getElementsByName('answer');
+      let selected = '';
+      for (let answer of answers) {
+        if (answer.checked) {
+          selected = answer.value;
+          break;
+        }
+      }
+
+      if (selected) {
+        sessionStorage.setItem('q8', selected);
+        window.location.href = 'Question 9.html';
+      } else {
+        alert('Please select an answer!');
+      }
+    }
+	
+	window.onload = function() {
+    const progress = document.getElementById('progressBar');
+    progress.style.width = '80%';
+  }
+  </script>
+</body>
+</html>
