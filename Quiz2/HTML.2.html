@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quiz Game</title>
+	<link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1 id="quiz-title">Quiz Game</h1>
+        <div class="quiz-info">
+            <button id="back-button">Home</button>
+            <span id="progress-tracker">Progress: 0%</span>
+            <span id="score-tracker">Score: 0</span>
+        </div>
+        <div class="quiz-box">
+            <p id="question-text">If you are pumping iron at the gym, what element are you low-key repping on the periodic table?</p>
+            <script>
+                function checkAnswer(answer) {
+                    if (answer === 'yes') {
+                        alert("Correct!");
+						if (confirm("Correct! Do you want to go to the next question?")) {
+						                            window.location.href = 'page2.html';
+						                        }
+                    } else {
+                        alert("Incorrect!");
+                    }
+                }
+            </script>
+            <div id="answer-options">
+                <button class="answer-btn" onclick="checkAnswer('no')">Fr (Fragile AF)</button>
+                <button class="answer-btn" onclick="checkAnswer('no')">F (Fluoride fresh)</button>
+                <button class="answer-btn" onclick="checkAnswer('yes')">Fe (Flex express)</button>
+                <button class="answer-btn" onclick="checkAnswer('no')">Fs (Fake stuff)</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1 id="quiz-title">Quiz Game</h1>
+        <div class="quiz-info">
+            <button id="back-button">Return</button>
+            <span id="progress-tracker">Progress: 40%</span>
+            <span id="score-tracker">Score: 2</span>
+        </div>
+        <div class="quiz-box">
+            <p id="question-text">Which cosmic chonk is the heavyweight champ of the solar system?</p>
+            <script>
+                function checkAnswer(answer) {
+                    if (answer === 'yes') {
+                        alert("Correct!");
+						if (confirm("Correct! Do you want to go to the next question?")) {
+						                            window.location.href = 'page4.html';
+						                        }
+                    } else {
+                        alert("Incorrect!");
+                    }
+                }
+            </script>
+            <div id="answer-options">
+                <button class="answer-btn" onclick="checkAnswer('no')">Saturn (Ringed and rad)</button>
+                <button class="answer-btn" onclick="checkAnswer('no')">Earth (Our humble home)</button>
+                <button class="answer-btn" onclick="checkAnswer('no')">Neptune (Deep and moody)</button>
+                <button class="answer-btn" onclick="checkAnswer('yes')">Jupiter (Big boy energy)</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

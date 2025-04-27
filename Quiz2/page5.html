@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1 id="quiz-title">Quiz Game</h1>
+        <div class="quiz-info">
+            <button id="back-button">Return</button>
+            <span id="progress-tracker">Progress: 80%</span>
+            <span id="score-tracker">Score: 5</span>
+        </div>
+        <div class="quiz-box">
+            <p id="question-text">What was the name of the bug everyone thought would crash the worlds computers at midnight, Jan 1, 2000?</p>
+            <script>
+                function checkAnswer(answer) {
+                    if (answer === 'yes') {
+                        alert("Correct!");
+						if (confirm("Correct! Do you want to go to the next question?")) {
+						                            window.location.href = 'page6.html';
+						                        }
+                    } else {
+                        alert("Incorrect!");
+                    }
+                }
+            </script>
+            <div id="answer-options">
+                <button class="answer-btn" onclick="checkAnswer('no')">The Dotcom Boom</button>
+                <button class="answer-btn" onclick="checkAnswer('yes')">Y2K Bug</button>
+                <button class="answer-btn" onclick="checkAnswer('no')">Cyberstorm</button>
+                <button class="answer-btn" onclick="checkAnswer('no')">The Millenniumpocalypse</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
