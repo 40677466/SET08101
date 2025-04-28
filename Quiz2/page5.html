@@ -35,5 +35,22 @@
         </div>
     </div>
 
+
+		    <!-- Connor B Completion and Local Storage Unlocking Code, please message before making changes -->
+    <div id="quiz-completion">
+        <h1>Quiz Completed!</h1>
+        <p>Congratulations on finishing the quiz!</p>
+        <button id="completeQuizBtn">Mark Quiz Complete</button>
+    </div>
+
+    <script>
+        document.getElementById("completeQuizBtn").addEventListener("click", function() {
+            localStorage.setItem("quiz2Complete", "true");
+            alert("Quiz 2 marked as complete! Returning to homepage.");
+            window.location.href = "/SET08101/index.html";
+        });
+    </script>
+
+	
 </body>
 </html>
