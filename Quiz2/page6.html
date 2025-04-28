@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1 id="quiz-title">Quiz Game</h1>
+        <div class="quiz-info">
+            <button id="back-button">Return</button>
+            <span id="progress-tracker">Progress: 80%</span>
+            <span id="score-tracker">Score: 5</span>
+        </div>
+        <div class="quiz-box">
+            <p id="question-text">Which movie, released in 1999, featured characters living inside a computer simulation?
+</p>
+            <script>
+                function checkAnswer(answer) {
+                    if (answer === 'yes') {
+                        alert("Correct!");
+						if (confirm("Correct! Do you want to go to the next question?")) {
+						                            window.location.href = 'page7.html';
+						                        }
+                    } else {
+                        alert("Incorrect!");
+                    }
+                }
+            </script>
+            <div id="answer-options">
+                <button class="answer-btn" onclick="checkAnswer('no')">Titanic</button>
+                <button class="answer-btn" onclick="checkAnswer('yes')">The Matrix
+</button>
+                <button class="answer-btn" onclick="checkAnswer('no')">Toy Story</button>
+                <button class="answer-btn" onclick="checkAnswer('no')">Jurassic Park</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

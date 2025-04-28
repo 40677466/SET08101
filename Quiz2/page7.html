@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1 id="quiz-title">Quiz Game</h1>
+        <div class="quiz-info">
+            <button id="back-button">Return</button>
+            <span id="progress-tracker">Progress: 80%</span>
+            <span id="score-tracker">Score: 5</span>
+        </div>
+        <div class="quiz-box">
+            <p id="question-text">Which video game console was released by Sony in the year 2000?
+</p>
+            <script>
+                function checkAnswer(answer) {
+                    if (answer === 'yes') {
+                        alert("Correct!");
+						if (confirm("Correct! Do you want to go to the next question?")) {
+						                            window.location.href = 'page8.html';
+						                        }
+                    } else {
+                        alert("Incorrect!");
+                    }
+                }
+            </script>
+            <div id="answer-options">
+                <button class="answer-btn" onclick="checkAnswer('yes')">PlayStation 2</button>
+                <button class="answer-btn" onclick="checkAnswer('no')">Xbox 360
+</button>
+                <button class="answer-btn" onclick="checkAnswer('no')">Nintendo GameCube</button>
+                <button class="answer-btn" onclick="checkAnswer('no')">Sega Dreamcast</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
